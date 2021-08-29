@@ -1,4 +1,4 @@
-# Google Trends Go Scraper
+# Google Trends Query Tool in Go
 
 ## Run instructions
 
