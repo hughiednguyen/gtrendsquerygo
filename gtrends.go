@@ -226,7 +226,7 @@ func normalizeData(existingData, newData map[int64]int) {
 	scaleValue := findScaleValue(existingData, newData)
 
 	// Normalize all new data and put into existing data records
-	// Note: Existing data points with zero will be
+	// Note: Existing data points with zero will be overwritten if new data is nonzero
 	for key, value := range newData {
 		normalizedValue := math.Round(float64(value) * scaleValue)
 
@@ -252,7 +252,7 @@ func normalizeData(existingData, newData map[int64]int) {
 		_, found := newData[key]
 
 		if found {
-			return
+			continue
 		} else {
 			delete(existingData, key)
 		}
