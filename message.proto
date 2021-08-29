@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+message Message {
+    string keyword = 1;  // Keyword queried 
+    int64 timestamp = 2; // Timestamp in Unix Epoch Time
+    oneof optional_value { 
+        int32 value = 3;       // Value of normalized interest 
+    }
+}
